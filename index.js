@@ -7,16 +7,33 @@ Practice accessing data by console.log-ing the following pieces of data note.
 
 💡 HINT: You may want to filter the data first 😉*/
 
+
 //(a) Home Team name for 2014 world cup final
+
+fifaData
+    .filter(arr => arr.Stage === "Final" && arr.Year === 2014)
+    .map(arr => console.log(arr['Home Team Name']));
+
 
 //(b) Away Team name for 2014 world cup final
 
-//(c) Home Team goals for 2014 world cup final
+fifaData
+    .filter(arr => arr.Stage === "Final" && arr.Year === 2014)
+    .map(arr => console.log(arr['Away Team Name']));
 
+//(c) Home Team goals for 2014 world cup final
+fifaData
+    .filter(arr => arr.Stage === "Final" && arr.Year === 2014)
+    .map(arr => console.log(arr['Home Team Goals']));
 //(d) Away Team goals for 2014 world cup final
+fifaData
+    .filter(arr => arr.Stage === "Final" && arr.Year === 2014)
+    .map(arr => console.log(arr['Away Team Goals']));
 
 //(e) Winner of 2014 world cup final */
-
+fifaData
+    .filter(arr => arr.Stage === 'Final' && arr.Year === 2014)
+    .map(arr => console.log(arr['Home Team Goals'] > arr['Away Team Goals'] ? arr['Home Team Name'] : arr['Away Team Name']));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use getFinals to do the following:
@@ -26,7 +43,7 @@ Use getFinals to do the following:
 💡 HINT - you should be looking at the stage key inside of the objects
 */
 
-function getFinals(/* code here */) {
+function getFinals(arr) {
     /* code here */
  }
 
