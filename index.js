@@ -115,8 +115,9 @@ Use the higher order function getAverageGoals to do the following:
 */
 
 function getAverageGoals(cb) {
-    let avgGoals = cb.map(arr => arr['Home Team Goals'] + arr['Away Team Goals']).reduce(
-        (a, b) => a+b, 0) / cb.map(arr => arr['Home Team Goals'] + arr['Away Team Goals']).length; //map getFinals and add the home and away goals together, then average them out
+    let allGoals = cb.map(arr => arr['Home Team Goals'] + arr['Away Team Goals']);
+    let avgGoals = allGoals.reduce(
+        (a, b) => a+b, 0) / allGoals.length;
     return Number.parseFloat(avgGoals).toFixed(2);
  }
 
