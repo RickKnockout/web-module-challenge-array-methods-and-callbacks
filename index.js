@@ -114,10 +114,13 @@ Use the higher order function getAverageGoals to do the following:
  
 */
 
-function getAverageGoals(/* code here */) {
-    /* code here */
+function getAverageGoals(cb) {
+    let avgGoals = cb.map(arr => arr['Home Team Goals'] + arr['Away Team Goals']).reduce(
+        (a, b) => a+b, 0) / cb.map(arr => arr['Home Team Goals'] + arr['Away Team Goals']).length; //map getFinals and add the home and away goals together, then average them out
+    return Number.parseFloat(avgGoals).toFixed(2);
  }
 
+ console.log(getAverageGoals(getFinals(fifaData)));
 
 
 
